@@ -1,20 +1,11 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
+Each key is debounced, and the highest key held picks a note from a table of phase steps. Two phase accumulators run at the note and at half the note. One feeds a sine table, the other gives a square wave. A mixer averages them and a PWM block makes the audio signal.
 
 ## How to test
 
-Explain how to use your project
+Filter uio[0] with an RC filter and feed it to a speaker or headphones. Press the keys.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Eight push buttons, an RC filter and a speaker.
