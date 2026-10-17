@@ -8,7 +8,7 @@ project:
   clock_hz:     25000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "1x2"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
   top_module:  "tt_um_maxeland07_music_instrument"
@@ -25,7 +25,9 @@ project:
     - "ip_rom_sine.v"
     - "ip_tick.v"
     - "music_core.v"
+    - "piano_hero.v"
     - "project.v"
+    - "song_rom.v"
     - "vga_shell.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
@@ -42,14 +44,14 @@ pinout:
   ui[7]: "Key 7 (C5)"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "R1"
+  uo[1]: "G1"
+  uo[2]: "B1"
+  uo[3]: "VGA vsync"
+  uo[4]: "R0"
+  uo[5]: "G0"
+  uo[6]: "B0"
+  uo[7]: "VGA hsync"
 
   # Bidirectional pins
   uio[0]: "PWM audio output"
@@ -59,7 +61,7 @@ pinout:
   uio[4]: ""
   uio[5]: ""
   uio[6]: ""
-  uio[7]: ""
+  uio[7]: "PWM audio output (audio PMOD)"
 
 # Do not change!
 yaml_version: 6
